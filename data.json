@@ -1,28 +1,12 @@
 {
   "data": [
     {
-      "id": 1,
-      "first_name": "L",
-      "last_name": "Morcom",
-      "role": "Assistant Media Planner",
-      "location": "Argentina",
-      "status": "active"
-    },
-    {
-      "id": 2,
-      "first_name": "Anderea",
-      "last_name": "Fontenot",
-      "role": "Dental Hygienist",
-      "location": "United States",
-      "status": "inactive"
-    },
-    {
       "id": 3,
       "first_name": "Hildy",
       "last_name": "Beelby",
       "role": "Assistant Manager",
       "location": "Russia",
-      "status": "active"
+      "status": "inactive"
     },
     {
       "id": 4,

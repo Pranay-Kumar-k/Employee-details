@@ -117,6 +117,7 @@ export const EmployeesTable = (employees) => {
     console.log(payload)
     console.log(id)
     dispatch(editEmployeeData(payload))
+    setOpen(false)
   }
 
   const handleDelete = (item) => {
@@ -221,9 +222,8 @@ export const EmployeesTable = (employees) => {
                           value={status}
                           onChange={(e) => setStatus(e.target.value)}
                         >
-                          <option aria-label="None" value="" />
-                          <option value={true}>active</option>
-                          <option value={false}>inactive</option>
+                          <option value={"active"}>active</option>
+                          <option value={"inactive"}>inactive</option>
                         </Select>
                       </FormControl>
                       </Grid>
