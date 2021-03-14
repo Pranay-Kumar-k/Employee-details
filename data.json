@@ -407,22 +407,6 @@
       "role": "Sales Representative",
       "location": "Nigeria",
       "status": "active"
-    },
-    {
-      "id": 55,
-      "first_name": "Jaclin",
-      "last_name": "Colecrough",
-      "role": "Compensation Analyst",
-      "location": "Sweden",
-      "status": "inactive"
-    },
-    {
-      "id": 56,
-      "first_name": "Kristopher",
-      "last_name": "Collyer",
-      "role": "Human Resources Manager",
-      "location": "China",
-      "status": "active"
     }
   ]
 }
