@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -88,6 +88,7 @@ export const EmployeesTable = (employees) => {
   const [lname,setLname] = useState("")
   const [role,setRole] = useState("")
   const [location,setLocation] = useState("")
+  const [payload,setPayload] = useState({})
   const dispatch = useDispatch()
 
   const handleClose = () => {
@@ -95,27 +96,26 @@ export const EmployeesTable = (employees) => {
   };
   const handleEdit = (item) => {
     setOpen(true);
-    console.log(item.status)
-    setFname(item.first_name)
-    setLname(item.last_name)
-    setRole(item.role)
-    setLocation(item.location)
-    setStatus(item.status)
+    // console.log(item.status)
+    // setFname(item.first_name)
+    // setLname(item.last_name)
+    // setRole(item.role)
+    // setLocation(item.location)
+    // setStatus(item.status)
   };
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // console.log(status)
-    const payload = {
+    const data = {
       first_name:fname,
       last_name:lname,
       role:role,
       location:location,
       status:status
     }
+    setPayload(data)
     console.log(payload)
     dispatch(editEmployeeData(payload))
-    dispatch(getEmployeesData())
   }
 
   const handleDelete = (item) => {

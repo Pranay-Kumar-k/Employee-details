@@ -31,18 +31,19 @@ export const getEmployeesData = () => (dispatch) => {
 } 
 
 
-export const deleteData = () => ({
+export const deleteData = (payload) => ({
     type:DELETE_DATA
 })
 
 export const deleteEmployee = (payload) => (dispatch) => {
-    dispatch(deleteData())
-    axios({
+    dispatch(deleteData(payload))
+    return axios({
         method:'DELETE',
-        url:`http://localhost:3001/data/${payload}`
+        url:`http://localhost:3001/data/${Number(payload)}`
     })
     .then((res) => {
         console.log(res)
+        dispatch(getEmployeesData())
     })
     .catch(err => console.log(err))
 }
@@ -53,15 +54,14 @@ export const editData = () => ({
 
 export const editEmployeeData = (payload) => (dispatch) => {
     dispatch(editData())
-    axios({
+    console.log(payload)
+    return axios({
         method:'PATCH',
-        url:`http://localhost:3001/data/${payload}`,
-        data:{
-            ...payload
-        }
+        url:`http://localhost:3001/data/${Number(payload.id)}`,
+        data: payload
     })
     .then((res) => {
-        console.log(res)
+        dispatch(getEmployeesData())
     })
     .catch((err) => console.log(err))
 }

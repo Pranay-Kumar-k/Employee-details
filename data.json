@@ -1,60 +1,12 @@
 {
   "data": [
     {
-      "id": 4,
-      "first_name": "Nannette",
-      "last_name": "Castaignet",
-      "role": "Statistician I",
-      "location": "Philippines",
-      "status": "inactive"
-    },
-    {
-      "id": 6,
-      "first_name": "Idette",
-      "last_name": "Siney",
-      "role": "Project Manager",
-      "location": "Kazakhstan",
-      "status": "active"
-    },
-    {
-      "id": 7,
-      "first_name": "Cathleen",
-      "last_name": "Binestead",
-      "role": "Media Manager II",
-      "location": "Indonesia",
-      "status": "active"
-    },
-    {
-      "id": 9,
-      "first_name": "Ida",
-      "last_name": "Crocken",
-      "role": "Dental Hygienist",
-      "location": "Indonesia",
-      "status": "active"
-    },
-    {
       "id": 10,
       "first_name": "Dex",
       "last_name": "Wandrich",
       "role": "Web Designer IV",
       "location": "China",
       "status": "inactive"
-    },
-    {
-      "id": 11,
-      "first_name": "Gabi",
-      "last_name": "Juett",
-      "role": "Operator",
-      "location": "Albania",
-      "status": "active"
-    },
-    {
-      "id": 12,
-      "first_name": "Jillane",
-      "last_name": "Gribbin",
-      "role": "Engineer IV",
-      "location": "China",
-      "status": "active"
     },
     {
       "id": 13,
