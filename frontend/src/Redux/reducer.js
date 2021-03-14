@@ -1,4 +1,4 @@
-import {GET_DATA,GET_DATA_FAILURE,GET_DATA_SUCCESS,GET_ITEMS_FAILURE} from "./actionType"
+import {DELETE_DATA, GET_DATA,GET_DATA_FAILURE,GET_DATA_SUCCESS,GET_ITEMS_FAILURE} from "./actionType"
 
 const initState = {
     data:[],
@@ -21,6 +21,10 @@ export const reducer = (state = initState, {type,payload}) => {
             return {
                 ...state,
                 isErr:true
+            }
+        case DELETE_DATA:
+            return {
+                ...state
             }
         default:
             return state;

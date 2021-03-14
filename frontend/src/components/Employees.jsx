@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getEmployeesData } from '../Redux/actionCreator'
 import EmployeesTable from './EmployeesTable'
@@ -9,7 +9,7 @@ function Employees() {
 
     useEffect(() => {
        dispatch(getEmployeesData())
-    }, [])
+    },[])
     
     return (
         <div>
