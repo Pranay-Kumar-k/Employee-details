@@ -53,15 +53,17 @@ export const editData = () => ({
 })
 
 export const editEmployeeData = (payload) => (dispatch) => {
-    dispatch(editData())
     console.log(payload)
+    dispatch(editData())
     return axios({
-        method:'PATCH',
-        url:`http://localhost:3001/data/${Number(payload.id)}`,
-        data: payload
+        method:'PUT',
+        // headers:'Access-Control-Allow-Origin: *',
+        url:`http://localhost:3001/data/${payload.id}`,
+        data: payload,
     })
     .then((res) => {
         dispatch(getEmployeesData())
+        console.log(res)
     })
     .catch((err) => console.log(err))
 }

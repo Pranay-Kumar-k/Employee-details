@@ -20,7 +20,7 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import { useDispatch } from 'react-redux';
-import { deleteEmployee, editEmployeeData, getEmployeesData } from '../Redux/actionCreator';
+import { deleteEmployee, editEmployeeData } from '../Redux/actionCreator';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const EmployeesTable = (employees) => {
 
-  console.log(employees)
+  // console.log(employees)
   const classes = useStyles();
   const [open,setOpen] = useState(false);
   const [status,setStatus] = useState("");
@@ -88,7 +88,7 @@ export const EmployeesTable = (employees) => {
   const [lname,setLname] = useState("")
   const [role,setRole] = useState("")
   const [location,setLocation] = useState("")
-  const [payload,setPayload] = useState({})
+  const [id,setId] = useState("")
   const dispatch = useDispatch()
 
   const handleClose = () => {
@@ -96,25 +96,26 @@ export const EmployeesTable = (employees) => {
   };
   const handleEdit = (item) => {
     setOpen(true);
-    // console.log(item.status)
-    // setFname(item.first_name)
-    // setLname(item.last_name)
-    // setRole(item.role)
-    // setLocation(item.location)
-    // setStatus(item.status)
+    console.log(item.status)
+    setFname(item.first_name)
+    setLname(item.last_name)
+    setRole(item.role)
+    setLocation(item.location)
+    setStatus(item.status)
+    setId(item.id)
   };
-
   const handleSubmit = (e) => {
     e.preventDefault()
-    const data = {
+    const payload = {
+      id:id,
       first_name:fname,
       last_name:lname,
       role:role,
       location:location,
       status:status
     }
-    setPayload(data)
     console.log(payload)
+    console.log(id)
     dispatch(editEmployeeData(payload))
   }
 
@@ -233,7 +234,7 @@ export const EmployeesTable = (employees) => {
                       variant="contained"
                       color="primary"
                       className={classes.submit}
-                      onSubmit={handleSubmit}
+                      onClick={handleSubmit}
                     >
                       Submit
                     </Button>
